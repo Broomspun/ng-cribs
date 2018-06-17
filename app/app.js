@@ -10,7 +10,10 @@ angular.module('cribsApp', [
 ])
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
         // $locationProvider.hashPrefix('');
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
         // $routeProvider.otherwise({redirectTo: '/view1'});
     }])
     .factory('cribsFactory', function ($http) {
